@@ -24,6 +24,6 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 # git clone https://github.com/zerolabnet/SSClash -b main package/ssclash
 
 # mihomo
-cd openwrt/package/net
+cd package/net
 git clone https://github.com/douglarek/mihomo-openwrt.git
 cp -r mihomo-openwrt/net/mihomo .
