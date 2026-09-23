@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: Build Nokia XG-040G-MD ImmortalWrt with PON
+name: Build Airoha AN7581 ImmortalWrt with PON
 
 permissions:
   contents: write
