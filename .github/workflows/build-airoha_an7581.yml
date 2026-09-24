@@ -63,7 +63,7 @@ jobs:
 
     - name: Load custom feeds
       run: |
-        chmod +x $DIY_P1_SH
+        chmod +x $GITHUB_WORKSPACE/$DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
@@ -76,7 +76,7 @@ jobs:
         [ -e configs/custom.config ] && mv configs/custom.config .config
         cd openwrt
         [ -e configs/$CONFIG_FILE ] && cat configs/$CONFIG_FILE >> .config
-        chmod +x $DIY_P2_SH
+        chmod +x $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$DIY_P2_SH
 
         make defconfig
