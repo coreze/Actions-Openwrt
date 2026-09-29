@@ -73,13 +73,13 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        [ -e configs/custom.config ] && mv configs/custom.config openwrt/.config
-        cd openwrt
-        [ -e configs/$CONFIG_FILE ] && cat configs/$CONFIG_FILE >> .config
+        sed '/^#/d' configs/$CONFIG_FILE | sed '/^$/d' >> openwrt/.config
+        [ -e configs/custom.config ] && cat configs/custom.config >> openwrt/.config
         chmod +x $GITHUB_WORKSPACE/$DIY_P2_SH
         $GITHUB_WORKSPACE/$DIY_P2_SH
-
+        cd openwrt
         make defconfig
+        cat .config
 
     - name: Download package
       id: package
